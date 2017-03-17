@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img src="{{photo}}">
+      </ion-thumbnail>
+      <h2>{{name}}</h2>
+    </ion-item>
+    <ion-card-content>
+      <p>{{formatted_address}}</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+        <ion-icon name="people"></ion-icon>
+        <div>{{nb_participant}} Partipants</div>
+      </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          {{date}}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <div #map id="map"></div>
+</ion-content>

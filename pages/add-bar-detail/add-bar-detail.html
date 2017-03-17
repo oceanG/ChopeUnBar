@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img src="{{photo}}">
+      </ion-thumbnail>
+      <h2>{{name}}</h2>
+    </ion-item>
+    <ion-card-content>
+      <p>{{formatted_address}}</p>
+    </ion-card-content>
+    <ion-item>
+      <ion-label>Date du CUB</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="date_cub"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nombre de Personne</ion-label>
+      <ion-input type="number" [(ngModel)]="nb_participant"></ion-input>
+    </ion-item>
+  </ion-card>
+  <button ion-button color="primary" block (click)="addBar()">AddBar</button>
+  <div #map id="map"></div>
+</ion-content>
