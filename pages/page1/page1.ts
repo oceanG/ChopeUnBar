@@ -24,13 +24,6 @@ export class Page1 {
   ionViewDidLoad(){
   }
 
-  addItem(){
-
-    let addModal = this.modalCtrl.create(AddBarPage);
-    addModal.present();
-
-  }
-
   viewItem(item){
     this.navCtrl.push(BarDetailPage, {
       item: item

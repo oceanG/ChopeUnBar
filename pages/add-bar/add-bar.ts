@@ -28,10 +28,6 @@ export class AddBarPage implements OnInit {
         };        
     }
 
-    dismiss() {
-        this.viewCtrl.dismiss();
-    }
-
     chooseItem(item: any) {
         console.log('modal > chooseItem > item > ', item);
         this.navCtrl.push(AddBarDetailPage, {
