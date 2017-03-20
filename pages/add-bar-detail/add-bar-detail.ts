@@ -2,7 +2,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import { Page1 } from "../page1/page1";
+import { ListBarPage } from '../list-bar/list-bar';
 
 declare var google;
 
@@ -72,7 +72,7 @@ export class AddBarDetailPage {
   addBar() {
     this.items.push({ name: this.name, place_id: this.place_id, date: this.date_cub, nb_participant:this.nb_participant, formatted_address: this.place_detail.formatted_address, photo: this.place_detail.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}) });
     console.log("AddBar");
-    this.navCtrl.push(Page1);
+    this.navCtrl.push(ListBarPage);
   }
 
 }

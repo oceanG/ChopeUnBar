@@ -2,16 +2,15 @@ import { Component } from '@angular/core';
 
 import { ModalController, NavController } from 'ionic-angular';
 
-import { AddBarPage } from '../add-bar/add-bar';
 import { BarDetailPage } from '../bar-detail/bar-detail';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
-  selector: 'page-page1',
-  templateUrl: 'page1.html'
+  selector: 'page-list-bar',
+  templateUrl: 'list-bar.html'
 })
-export class Page1 {
+export class ListBarPage {
 
    //public items;
    items: FirebaseListObservable<any>;
