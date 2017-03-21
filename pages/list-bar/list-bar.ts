@@ -16,7 +16,11 @@ export class ListBarPage {
    items: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, af: AngularFire) {
-  this.items = af.database.list('/cub');
+  this.items = af.database.list('/cub', {
+      query: {
+        orderByChild: 'date'
+      }
+    });
 
   }
 

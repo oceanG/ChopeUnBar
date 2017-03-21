@@ -5,6 +5,7 @@ import { ListBarPage } from '../pages/list-bar/list-bar';
 import { BarDetailPage } from '../pages/bar-detail/bar-detail';
 import { AddBarPage } from '../pages/add-bar/add-bar';
 import { AddBarDetailPage } from '../pages/add-bar-detail/add-bar-detail';
+import { NextBarPage } from '../pages/next-bar/next-bar';
 
 import { AngularFireModule } from 'angularfire2';
 
@@ -22,7 +23,8 @@ export const firebaseConfig = {
     ListBarPage,
     BarDetailPage, 
     AddBarPage, 
-    AddBarDetailPage
+    AddBarDetailPage,
+    NextBarPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -34,7 +36,8 @@ export const firebaseConfig = {
     ListBarPage,
     BarDetailPage,
     AddBarPage,
-    AddBarDetailPage
+    AddBarDetailPage,
+    NextBarPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
