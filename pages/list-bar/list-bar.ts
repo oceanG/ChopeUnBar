@@ -21,7 +21,6 @@ export class ListBarPage {
         orderByChild: 'date'
       }
     });
-
   }
 
   ionViewDidLoad(){
