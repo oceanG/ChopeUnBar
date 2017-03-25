@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import { BarDetailPage } from '../bar-detail/bar-detail';
+import { NextBarDetailPage } from '../next-bar-detail/next-bar-detail';
 
 
 @Component({
@@ -27,7 +27,7 @@ export class NextBarPage {
     console.log('ionViewDidLoad NextBarPage');
   }
   viewItem(item){
-    this.navCtrl.push(BarDetailPage, {
+    this.navCtrl.push(NextBarDetailPage, {
       item: item
     });
   }

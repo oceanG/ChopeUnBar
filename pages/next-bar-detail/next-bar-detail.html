@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Prochain Bar : {{name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img src="{{photo}}">
+      </ion-thumbnail>
+      <h2>{{name}}</h2>
+      <h2>Le {{date}}</h2>
+    </ion-item>
+    <ion-card-content>
+      <p>{{formatted_address}}</p>
+    </ion-card-content>
+  </ion-card>
+  <div #map id="map"></div>
+</ion-content>
