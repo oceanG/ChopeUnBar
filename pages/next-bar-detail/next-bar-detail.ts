@@ -34,6 +34,7 @@ export class NextBarDetailPage {
     this.photo = this.navParams.get('item').photo;
     this.loadMap();
     this.getPosition();
+    this.watchPosition();
   }
 
 
@@ -82,5 +83,28 @@ Geolocation.getCurrentPosition().then((resp) => {
 });
 
   }
+
+
+watchPosition(){
+  let options = {
+    frequency: 3000, 
+    enableHighAccuracy: true
+  };
+  
+let watch = Geolocation.watchPosition(options);
+watch.subscribe((data) => {
+  console.log('Get watch position success', data);
+ // data can be a set of coordinates, or an error (if an error occurred).
+ // data.coords.latitude
+ // data.coords.longitude
+ //this.myposition.setPosition(data.coords.latitude, data.coords.longitude);
+ this.myposition = new google.maps.Marker({
+        map: this.map,
+        position: new google.maps.LatLng(data.coords.latitude, data.coords.longitude)
+      });
+});
+
+}
+  
 
 }
