@@ -21,7 +21,7 @@ export class NextBarDetailPage {
   service:any;
   marker;
   place_id;
-  myposition;
+  myPositionMarker;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
@@ -70,13 +70,13 @@ export class NextBarDetailPage {
   
   getPosition(){
 Geolocation.getCurrentPosition().then((resp) => {
-  this.myposition = new google.maps.Marker({
+  this.myPositionMarker = new google.maps.Marker({
         map: this.map,
         position: new google.maps.LatLng(resp.coords.latitude, resp.coords.longitude)
       });
  // resp.coords.latitude
  // resp.coords.longitude
- google.maps.event.addListener(this.myposition);
+ google.maps.event.addListener(this.myPositionMarker);
  console.log('Get location success', resp);
 }).catch((error) => {
   console.log('Error getting location', error);
@@ -97,11 +97,11 @@ watch.subscribe((data) => {
  // data can be a set of coordinates, or an error (if an error occurred).
  // data.coords.latitude
  // data.coords.longitude
- //this.myposition.setPosition(data.coords.latitude, data.coords.longitude);
- this.myposition = new google.maps.Marker({
+ this.myPositionMarker.setPosition(new google.maps.LatLng(data.coords.latitude, data.coords.longitude));
+ /*this.myPositionMarker = new google.maps.Marker({
         map: this.map,
         position: new google.maps.LatLng(data.coords.latitude, data.coords.longitude)
-      });
+      });*/
 });
 
 }
