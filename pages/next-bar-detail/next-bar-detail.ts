@@ -93,15 +93,8 @@ watchPosition(){
   
 let watch = Geolocation.watchPosition(options);
 watch.subscribe((data) => {
-  console.log('Get watch position success', data);
- // data can be a set of coordinates, or an error (if an error occurred).
- // data.coords.latitude
- // data.coords.longitude
  this.myPositionMarker.setPosition(new google.maps.LatLng(data.coords.latitude, data.coords.longitude));
- /*this.myPositionMarker = new google.maps.Marker({
-        map: this.map,
-        position: new google.maps.LatLng(data.coords.latitude, data.coords.longitude)
-      });*/
+  console.log('Get watch position success', data);
 });
 
 }
