@@ -72,7 +72,7 @@ export class AddBarDetailPage {
   addBar() {
     this.items.push({ name: this.name, place_id: this.place_id, date: this.date_cub, nb_participant:this.nb_participant, formatted_address: this.place_detail.formatted_address, photo: this.place_detail.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}) });
     console.log("AddBar");
-    this.navCtrl.push(ListBarPage);
+    this.navCtrl.setRoot(ListBarPage);
   }
 
 }
