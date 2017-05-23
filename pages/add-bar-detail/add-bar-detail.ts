@@ -21,6 +21,7 @@ export class AddBarDetailPage {
   formatted_address;
   photo;
   service:any;
+  url_photo;
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   items: FirebaseListObservable<any>;
@@ -70,7 +71,15 @@ export class AddBarDetailPage {
   }
 
   addBar() {
-    this.items.push({ name: this.name, place_id: this.place_id, date: this.date_cub, nb_participant:this.nb_participant, formatted_address: this.place_detail.formatted_address, photo: this.place_detail.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}) });
+    if(Array.isArray(this.place_detail.photos))
+    {
+      this.url_photo=this.place_detail.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100});
+    }
+    else
+    {
+      this.url_photo="";
+    }
+    this.items.push({ name: this.name, place_id: this.place_id, date: this.date_cub, nb_participant:this.nb_participant, formatted_address: this.place_detail.formatted_address, photo: this.url_photo });
     console.log("AddBar");
     this.navCtrl.setRoot(ListBarPage);
   }
